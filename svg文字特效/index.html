@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <svg width="500" height="250" class="text">
+      <!-- 渐变色定义 -->
+      <defs>
+        <linearGradient id="linearColor" gradientTransform="rotate(90)">
+          <stop offset="0%" stop-color="#14ffec">
+            <!-- 渐变动画 -->
+            <animate attributeName="stop-color" values="#14ffec;#ff7e67;#14ffec" dur="7s" begin="3s"
+              repeatCount="indefinite">
+            </animate>
+          </stop>
+          <stop offset="100%" stop-color="#ff7e67">
+            <animate attributeName="stop-color" values="#ff7e67;#14ffec;#ff7e67" dur="7s" begin="3s"
+              repeatCount="indefinite">
+            </animate>
+          </stop>
+        </linearGradient>
+      </defs>
+      <text class="logo_text" x="40" y="130">
+        浩淼Mists
+      </text>
+    </svg>
+  </div>
+</body>
+
+</html>
