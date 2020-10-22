@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>文字渐入</title>
+  <style>
+    :root {
+      --prencentage: 0%
+    }
+
+    body {
+      background-color: #000;
+      margin: 0;
+
+      height: 300vh;
+    }
+
+    .mist {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    h1 {
+      font-family: "Microsoft Yahei", sans-serif;
+      margin: 0;
+      padding: 0;
+      font-size: 48px;
+      color: #FFF;
+      letter-spacing: -0.3px;
+
+      /* 关键
+        从左到右
+      */
+      background-image: linear-gradient(75deg, rgba(255, 255, 255, 1) 0%,
+          rgba(255, 255, 255, 1) 33.33%, rgba(255, 255, 255, 0) 66.67%,
+          rgba(255, 255, 255, 0) 100%);
+
+      /* 水平方向300%，垂直100% ,即背景拉伸*/
+      background-size: 300% 100%;
+      /* 背景所在的位置 */
+      background-position-x: calc(100% - var(--prencentage));
+      /* 该属性只有chrome内核浏览器支持 ,裁剪，使背景只在文字上显示*/
+      background-clip: text;
+      -webkit-background-clip: text;
+      /* 文字透明，不会遮挡背景图片 */
+      color: transparent;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="mist">
+    <h1>Mists And Ripples</h1>
+  </div>
+  <script>
+    const text = document.querySelector('h1');
+    document.addEventListener('scroll', (e) => {
+      let sTop = document.documentElement.scrollTop;
+      let sHeight = document.documentElement.scrollHeight;
+      let cHeight = document.documentElement.clientHeight;
+      // 当scrollTop拉到底部时，scroll值为1，以此来改变background-position-x
+      let scroll = sTop / (sHeight - cHeight);
+      // 设置自定义css属性
+      text.style.setProperty('--prencentage', `${scroll * 100}%`);
+    })
+  </script>
+</body>
+
+</html>
