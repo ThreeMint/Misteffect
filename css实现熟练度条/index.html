@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      font-family: "Microsoft Yahei", sans-serif;
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    main {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #393e46;
+    }
+
+    ul {
+      width: 500px;
+    }
+
+    li {
+      list-style: none;
+      font-size: 18px;
+      color: #dbe2ef;
+      margin: 50px 0;
+      position: relative;
+
+    }
+
+    li::before,
+    li::after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 18px;
+      background-color: #292d33;
+      position: absolute;
+      top: 25px;
+      border-radius: 30px;
+    }
+
+    li::before {
+      box-shadow: 0 0 6px #74f9ff;
+    }
+
+    li::after {
+      background-image: linear-gradient(90deg, #1fab89, #62d2a2);
+    }
+
+    li::after {
+      animation-duration: 1.8s;
+      animation-fill-mode: forwards;
+      animation-timing-function: ease-in-out;
+    }
+
+    .html5::after {
+      animation-name: html5;
+
+    }
+
+    .js::after {
+      animation-name: js;
+
+    }
+
+    .css3::after {
+      animation-name: css3;
+
+    }
+
+    .ps::after {
+      animation-name: ps;
+
+    }
+
+    .vue::after {
+      animation-name: vue;
+
+    }
+
+    @keyframes html5 {
+      from {
+        width: 0;
+      }
+
+      to {
+        width: 95%;
+      }
+    }
+
+    @keyframes js {
+      from {
+        width: 0;
+      }
+
+      to {
+        width: 90%;
+      }
+    }
+
+    @keyframes css3 {
+      from {
+        width: 0;
+      }
+
+      to {
+        width: 85%;
+      }
+    }
+
+    @keyframes ps {
+      from {
+        width: 0;
+      }
+
+      to {
+        width: 66%;
+      }
+    }
+
+    @keyframes vue {
+      from {
+        width: 0;
+      }
+
+      to {
+        width: 77%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <ul>
+      <li class="html5">html5</li>
+      <li class="js">js</li>
+      <li class="css3">css3</li>
+      <li class="ps">ps</li>
+      <li class="vue">vue</li>
+    </ul>
+  </main>
+</body>
+
+</html>
