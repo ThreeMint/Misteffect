@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>简单导航栏特效</title>
+  <style>
+    * {
+
+      font-family: "Microsoft Yahei", sans-serif;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #364f6b;
+    }
+
+    a {
+      text-decoration: none;
+      color: white;
+    }
+
+
+    nav {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    ul,
+    li {
+      margin: 0;
+      padding: 0;
+    }
+
+    ul {
+      position: relative;
+      display: flex;
+    }
+
+    ul li {
+      list-style: none;
+      width: 100px;
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+      font-size: 1rem;
+      font-weight: bold;
+      color: white;
+    }
+
+    .slider {
+      width: 100px;
+      height: 50px;
+      background-color: #aa96da;
+      border-radius: 10px;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      z-index: -1;
+      transition: all ease .4s;
+    }
+
+    li:nth-child(1):hover~.slider {
+      left: 0;
+    }
+
+    li:nth-child(2):hover~.slider {
+      left: 100px;
+    }
+
+    li:nth-child(3):hover~.slider {
+      left: 200px;
+    }
+
+    li:nth-child(4):hover~.slider {
+      left: 300px;
+    }
+
+    li:nth-child(5):hover~.slider {
+      left: 400px;
+    }
+
+    .slider.slider2 {
+      height: 4px;
+      bottom: -5px
+    }
+
+    .slider.slider3 {
+      height: 0;
+      width: 0;
+      border-radius: 0;
+      border-top: 50px solid transparent;
+      border-right: 100px solid #fcbad3;
+      border-bottom: 0 solid transparent;
+      border-left: 0 solid transparent;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#">首页</a></li>
+        <li><a href="#">产品列表</a></li>
+        <li><a href="#">项目介绍</a></li>
+        <li><a href="#">关于公司</a></li>
+        <li><a href="#">联系我们</a></li>
+        <div class="slider"></div>
+      </ul>
+
+      <ul>
+        <li><a href="#">首页</a></li>
+        <li><a href="#">产品列表</a></li>
+        <li><a href="#">项目介绍</a></li>
+        <li><a href="#">关于公司</a></li>
+        <li><a href="#">联系我们</a></li>
+        <div class="slider slider2"></div>
+      </ul>
+
+      <ul>
+        <li><a href="#">首页</a></li>
+        <li><a href="#">产品列表</a></li>
+        <li><a href="#">项目介绍</a></li>
+        <li><a href="#">关于公司</a></li>
+        <li><a href="#">联系我们</a></li>
+        <div class="slider slider3"></div>
+      </ul>
+    </nav>
+  </header>
+</body>
+
+</html>
