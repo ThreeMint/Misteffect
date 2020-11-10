@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS-3D照片墙</title>
+  <style>
+    html,
+    body {
+      margin: 0;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: rgb(92, 94, 97);
+    }
+
+    main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .cube {
+      width: 250px;
+      height: 250px;
+      transform-style: preserve-3d;
+      animation: rotate-pic 10s ease-in-out infinite;
+    }
+
+    .cube>div {
+      width: 250px;
+      height: 250px;
+      background-size: cover;
+      background-position: center center;
+      opacity: 0.8;
+      position: absolute;
+    }
+
+    /* front */
+    .cube .img1 {
+      background-image: url("./pic1.jpg");
+      transform: translateZ(125px);
+    }
+
+    /* right */
+    .cube .img2 {
+      background-image: url("./pic2.jpg");
+      transform: rotateY(90deg) translateZ(125px);
+    }
+
+    /* left */
+    .cube .img3 {
+      background-image: url("./pic3.jpg");
+      transform: rotateY(-90deg) translateZ(125px);
+    }
+
+    /* down */
+    .cube .img4 {
+      background-image: url("./pic4.jpg");
+      transform: rotateX(90deg) translateZ(125px);
+    }
+
+    /* up */
+    .cube .img5 {
+      background-image: url("./pic5.jpg");
+      transform: rotateX(-90deg) translateZ(125px);
+    }
+
+    /* back */
+    .cube .img6 {
+      background-image: url("./pic6.jpg");
+      transform: rotateY(180deg) translateZ(125px);
+    }
+
+    @keyframes rotate-pic {
+      0% {
+        transform: rotateX(0deg) rotateY(0deg);
+      }
+
+      20% {
+        /* 右 */
+        transform: rotateY(-90deg);
+      }
+
+      40% {
+        /* 上 */
+        transform: rotateX(-90deg);
+      }
+
+      60% {
+        /* 左 */
+        transform: rotateY(90deg);
+      }
+
+      80% {
+        /* 下 */
+        transform: rotateX(90deg);
+      }
+
+      100% {
+        transform: rotateX(0deg) rotateY(0deg);
+      }
+
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <div class="cube">
+      <div class="img1"></div>
+      <div class="img2"></div>
+      <div class="img3"></div>
+      <div class="img4"></div>
+      <div class="img5"></div>
+      <div class="img6"></div>
+    </div>
+  </main>
+</body>
+
+</html>
